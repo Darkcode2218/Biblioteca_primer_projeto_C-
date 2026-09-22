@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Window
+    x:Class="Biblioteca_primer_projeto_C_.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Biblioteca">
+
+    <Grid Padding="30">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- TÍTULO -->
+
+        <TextBlock
+            Text="📚 Registo da Biblioteca"
+            FontSize="30"
+            FontWeight="Bold"
+            Margin="0,0,0,25"/>
+
+
+        <!-- FORMULARIOS -->
+
+        <Grid Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <!-- REGISTO DE LIVRO -->
+
+            <StackPanel
+                Grid.Column="0"
+                Spacing="12">
+
+                <TextBlock
+                    Text="Registo de novo livro"
+                    FontSize="22"
+                    FontWeight="SemiBold"
+                    Margin="0,0,0,10"/>
+
+                <TextBlock Text="Título"/>
+
+                <TextBox
+                    PlaceholderText="Introduza o título do livro"
+                    Text="{x:Bind LivroViewModel.Titulo, Mode=TwoWay}"/>
+
+                <TextBlock Text="Autor"/>
+
+                <TextBox
+                    PlaceholderText="Introduza o autor"
+                    Text="{x:Bind LivroViewModel.Autor, Mode=TwoWay}"/>
+
+                <TextBlock Text="ISBN"/>
+
+                <TextBox
+                    PlaceholderText="Introduza o ISBN"
+                    Text="{x:Bind LivroViewModel.ISBN, Mode=TwoWay}"/>
+
+                <Button
+                    Content="Registar livro"
+                    HorizontalAlignment="Left"
+                    Margin="0,10,0,0"
+                    Click="btnRegistarLivro_Click"/>
+
+                <TextBlock
+                    Text="{x:Bind LivroViewModel.Mensagem, Mode=OneWay}"
+                    Margin="0,10,0,0"/>
+
+            </StackPanel>
+
+
+            <!-- REGISTO DE UTILIZADOR -->
+
+            <StackPanel
+                Grid.Column="2"
+                Spacing="12">
+
+                <TextBlock
+                    Text="Registo de novo utilizador"
+                    FontSize="22"
+                    FontWeight="SemiBold"
+                    Margin="0,0,0,10"/>
+
+                <TextBlock Text="Nome"/>
+
+                <TextBox
+                    PlaceholderText="Introduza o nome"
+                    Text="{x:Bind UtilizadorViewModel.Nome, Mode=TwoWay}"/>
+
+                <TextBlock Text="Email"/>
+
+                <TextBox
+                    PlaceholderText="Introduza o email"
+                    Text="{x:Bind UtilizadorViewModel.Email, Mode=TwoWay}"/>
+
+                <TextBlock Text="Telefone"/>
+
+                <TextBox
+                    PlaceholderText="Introduza o telefone"
+                    Text="{x:Bind UtilizadorViewModel.Telefone, Mode=TwoWay}"/>
+
+                <Button
+                    Content="Registar utilizador"
+                    HorizontalAlignment="Left"
+                    Margin="0,10,0,0"
+                    Click="btnRegistarUtilizador_Click"/>
+
+                <TextBlock
+                    Text="{x:Bind UtilizadorViewModel.Mensagem, Mode=OneWay}"
+                    Margin="0,10,0,0"/>
+
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+
+</Window>

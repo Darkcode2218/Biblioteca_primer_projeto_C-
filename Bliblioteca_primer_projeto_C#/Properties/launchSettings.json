@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Bliblioteca_primer_projeto_C# (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Bliblioteca_primer_projeto_C# (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

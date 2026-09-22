@@ -1,0 +1,22 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.rsuser
+
+# .NET
+bin/
+obj/
+
+# Build
+Debug/
+Release/
+
+# Visual Studio Code
+.vscode/
+
+# JetBrains Rider
+.idea/
+
+# Logs
+*.log
