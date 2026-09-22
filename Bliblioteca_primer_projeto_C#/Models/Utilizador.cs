@@ -7,6 +7,7 @@ namespace Biblioteca_primer_projeto_C_.Models
         private string _nome = "";
         private string _telefone = "";
         private string _email = "";
+        private int _numeroUtilizador;
 
         public string Nome
         {
@@ -15,7 +16,8 @@ namespace Biblioteca_primer_projeto_C_.Models
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("O nome do utilizador não pode estar vazio.");
+                    throw new ArgumentException(
+                        "O nome do utilizador não pode estar vazio.");
                 }
 
                 _nome = value.Trim();
@@ -29,19 +31,19 @@ namespace Biblioteca_primer_projeto_C_.Models
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("O email do utilizador não pode estar vazio.");
+                    throw new ArgumentException(
+                        "O email do utilizador não pode estar vazio.");
                 }
 
                 if (!value.Contains("@"))
                 {
-                    throw new ArgumentException("O email do utilizador não é válido deve conter '@'.");
+                    throw new ArgumentException(
+                        "O email do utilizador não é válido. Deve conter '@'.");
                 }
 
                 _email = value.Trim();
             }
         }
-
-        private int _numeroUtilizador;
 
         public int NumeroUtilizador
         {
@@ -50,7 +52,8 @@ namespace Biblioteca_primer_projeto_C_.Models
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentException("O número do utilizador deve ser maior que zero.");
+                    throw new ArgumentException(
+                        "O número do utilizador deve ser maior que zero.");
                 }
 
                 _numeroUtilizador = value;
@@ -64,14 +67,19 @@ namespace Biblioteca_primer_projeto_C_.Models
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("O telefone do utilizador não pode estar vazio.");
+                    throw new ArgumentException(
+                        "O telefone do utilizador não pode estar vazio.");
                 }
 
                 _telefone = value.Trim();
             }
         }
 
-        public Utilizador(string nome, string email, int numeroUtilizador, string telefone)
+        public Utilizador(
+            string nome,
+            string email,
+            int numeroUtilizador,
+            string telefone)
         {
             Nome = nome;
             Email = email;
